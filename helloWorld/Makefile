@@ -7,13 +7,13 @@ CXXFLAGS=
 LD=ld
 EXEC=helloWorld
 
+all: $(EXEC)
+
 helloWorld.o: helloWorld.asm
 	$(AS) $(ASFLAGS) -o $@ $^
 
 helloWorld: helloWorld.o
 	$(CC) -o helloWorld helloWorld.o
-
-all: $(EXEC)
 
 #$(AS) $(ASFLAGS) -d ELF_TYPE asm_io.asm
 
